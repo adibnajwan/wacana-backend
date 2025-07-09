@@ -5,7 +5,7 @@ instance_class: F1
 
 env_variables:
   NODE_ENV: "production"
-  # kamu bisa tambahkan variabel .env langsung di sini jika tidak upload file .env
+  # variabel .env langsung di sini jika tidak upload file .env
 
 handlers:
   - url: /.*
