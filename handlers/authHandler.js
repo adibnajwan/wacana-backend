@@ -48,7 +48,7 @@ const registerHandler = async (request, h) => {
             username,
             email,
             password: hashedPassword, // Password di-hash untuk keamanan
-            preferences: '', // Bisa ditambahkan nanti
+            // preferences: '', // Bisa ditambahkan nanti
         });
 
         // Kirim respons sukses
@@ -116,7 +116,8 @@ const loginHandler = async (request, h) => {
             status: 'success',
             message: 'Login successful',
             data: {
-                token, // Kirimkan token untuk digunakan client
+                token, 
+                username: user.username // Kirimkan token dan username untuk digunakan client
             },
         }).code(200);
     } catch (error) {
