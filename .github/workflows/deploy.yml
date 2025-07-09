@@ -3,7 +3,7 @@ name: Deploy to App Engine
 on:
   push:
     branches:
-      - main  # atau ganti dengan nama branch kamu
+      - main
 
 jobs:
   deploy:
@@ -22,11 +22,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Deploy to Google App Engine
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: Deploy to App Engine
         uses: google-github-actions/deploy-appengine@v1
         with:
           deliverables: app.yaml
           project_id: ${{ secrets.GCP_PROJECT }}
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
-
 
