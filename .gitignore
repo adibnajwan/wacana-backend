@@ -1,1 +1,4 @@
-git commit -m "Add key.json, serviceAccountKey.json, and .env for deployment"
+# config/key.json
+# serviceAccountKey.json
+# .env
+node_modules/
